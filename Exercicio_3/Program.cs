@@ -40,8 +40,10 @@ void CalcularFaturamento()
       diasAcimaMedia++;
   }
 
-  Console.WriteLine($"O menor valor de faturamento do mês é: {menorValor}");
-  Console.WriteLine($"O maior valor de faturamento do mês é: {maiorValor}");
+  Console.WriteLine($"O menor valor de faturamento do mês é: R${menorValor:F2}");
+  Console.WriteLine($"O maior valor de faturamento do mês é: R${maiorValor:F2}");
   System.Console.WriteLine($"Teve {diasAcimaMedia} dias acima da média.");
 
 }
+
+CalcularFaturamento();
