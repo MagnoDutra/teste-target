@@ -16,16 +16,26 @@ void CalcularFaturamento()
   }
 
   double menorValor = faturamentoList[0].valor;
+  int diaMenorValor = faturamentoList[0].dia;
+
   double maiorValor = faturamentoList[0].valor;
+  int diaMaiorValor = faturamentoList[0].dia;
+
   double soma = 0;
 
   foreach (var dia in faturamentoList)
   {
     if (dia.valor < menorValor)
+    {
       menorValor = dia.valor;
+      diaMenorValor = dia.dia;
+    }
 
     if (dia.valor > maiorValor)
+    {
       maiorValor = dia.valor;
+      diaMaiorValor = dia.dia;
+    }
 
     soma += dia.valor;
   }
@@ -40,8 +50,8 @@ void CalcularFaturamento()
       diasAcimaMedia++;
   }
 
-  Console.WriteLine($"O menor valor de faturamento do mês é: R${menorValor:F2}");
-  Console.WriteLine($"O maior valor de faturamento do mês é: R${maiorValor:F2}");
+  Console.WriteLine($"O menor valor de faturamento do mês foi no dia {diaMenorValor} com o valor de R${menorValor:F2}");
+  Console.WriteLine($"O maior valor de faturamento do mês foi no dia {diaMaiorValor} com o valor de R${maiorValor:F2}");
   System.Console.WriteLine($"Teve {diasAcimaMedia} dias acima da média.");
 
 }
